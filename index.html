@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+    <div style="display: flex; height: 100vh;">
+        <div style="flex: 1; padding: 24px;">
+            <h1>PDF Editor</h1>
+            <div class="controls">
+                <input type="file" id="file-input" accept="application/pdf">
+                <button id="prev-page">Previous</button>
+                <span>Page: <input type="number" id="page-num" min="1" value="1" style="width:60px;"> / <span id="page-count">1</span></span>
+                <button id="next-page">Next</button>
+                <button id="zoom-in">Zoom In</button>
+                <button id="zoom-out">Zoom Out</button>
+            </div>
+            <div id="pdf-viewer"></div>
+        </div>
+        <aside id="feature-sidebar" style="width: 350px; background: #e9f5ff; border-left: 1px solid #b3d8ff; padding: 24px; box-sizing: border-box;">
+            <h2 style="margin-top:0;">Features</h2>
+            <ul style="list-style:none; padding-left:0;">
+                <li><strong>Edit & Annotate</strong>
+                    <ul>
+                        <li><button id="add-text">Add Text</button></li>
+                        <li><button id="edit-text">Edit Text</button></li>
+                        <li><button id="delete-text">Delete Text</button></li>
+                        <li><button id="highlight">Highlight</button></li>
+                        <li><button id="underline">Underline</button></li>
+                        <li><button id="strikethrough">Strikethrough</button></li>
+                        <li><button id="add-comment">Add Comment</button></li>
+                    </ul>
+                </li>
+                <li><strong>Export</strong>
+                    <ul>
+                        <li><button id="save-pdf">Save PDF</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
